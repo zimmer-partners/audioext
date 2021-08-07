@@ -11,16 +11,21 @@ require_once(__DIR__ . '/lib/audioext.php');
 // =======================
 
 $kirby->set('snippet', 'audioext', __DIR__ . '/snippets/audioext.php');
-$kirby->set('tag', 'audioext', __DIR__ . '/snippets/audioext.php');
 
 /*
 $kirby->set('route', array(
-    'pattern' => 'calendar/timezones',
-    'action' => function () {
-      return new Response(snippet('timezones', array(), true));
-    }
+  'pattern' => 'calendar/timezones',
+  'action' => function () {
+    return new Response(snippet('timezones', array(), true));
+  }
 ));
 */
+
+// ===================
+// = Tag Registery =
+// ===================
+
+require_once(__DIR__ . '/tags/audioext.php');
 
 // ===================
 // = Model Registery =

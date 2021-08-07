@@ -12,7 +12,7 @@
  * @author Thomas Fanninger <thomas@fanninger.at>
  * @link https://github.com/fanningert/kirbycms-extension-audio
  */
-kirbytext::$tags['audioext'] = array(
+$kirby->set('tag', 'audioext', array(
   'attr' => array(
     'm4a',
     'mp3',
@@ -27,33 +27,33 @@ kirbytext::$tags['audioext'] = array(
     'caption',
     'caption_top',
     'caption_class',
-  	'snippet_name'
+    'snippet_name'
   ),
   'html' => function($tag) { 
-  	return \at\fanninger\kirby\extension\audioext\AudioExt::executeTag( $tag, 'audioext' );
+    return \at\fanninger\kirby\extension\audioext\AudioExt::executeTag( $tag, 'audioext' );
   }
-);
+));
 
 if ( kirby()->option('kirby.extension.audioext.audio_tag') == true ) {
-	kirbytext::$tags['audio'] = array(
-			'attr' => array(
-	 	    'm4a',
-		    'mp3',
-		    'ogg',
-		    'wav',
-		    'class',
-		    'preload',
-		    'controls',
-		    'loop',
-		    'muted',
-		    'autoplay',
-		    'caption',
-		    'caption_top',
-		    'caption_class',
-		  	'snippet_name'
-			),
-			'html' => function($tag) {
-				return \at\fanninger\kirby\extension\audioext\AudioExt::executeTag( $tag, 'audio' );
-			}
-	);
+  $kirby->set('tag', 'audio', array(
+    'attr' => array(
+      'm4a',
+      'mp3',
+      'ogg',
+      'wav',
+      'class',
+      'preload',
+      'controls',
+      'loop',
+      'muted',
+      'autoplay',
+      'caption',
+      'caption_top',
+      'caption_class',
+      'snippet_name'
+    ),
+    'html' => function($tag) {
+      return \at\fanninger\kirby\extension\audioext\AudioExt::executeTag( $tag, 'audio' );
+    }
+  ));
 }
